@@ -45,6 +45,10 @@
             option.textContent = customer;
             customerSelect.appendChild(option);
           });
+        })
+        .catch(error => {
+          console.error("Failed to fetch customer list:", error);
+          responseMsg.textContent = "Failed to load customer list.";
         });
     };
 
