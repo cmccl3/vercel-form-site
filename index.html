@@ -88,14 +88,15 @@
         body: JSON.stringify(payload),
       })
       .then(res => res.text())
-      .then(() => {
+      .then(result => {
+        console.log("Server response:", result);
         responseMsg.textContent = "Submission successful!";
         form.reset();
         vehicleContainer.innerHTML = "";
       })
-      .catch(err => {
+      .catch(error => {
+        console.error("Submission error:", error);
         responseMsg.textContent = "Submission failed.";
-        console.error(err);
       });
     });
 
